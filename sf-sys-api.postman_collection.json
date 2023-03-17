@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d64401ba-614b-49ef-9e83-3753d297e45a",
+		"_postman_id": "39b48e50-f3f7-4068-89a2-795c2b2c9cc4",
 		"name": "sf-sys-api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26420540"
 	},
 	"item": [
 		{
@@ -167,6 +168,90 @@
 						{
 							"key": "Id",
 							"value": "0062w00000KehYjAAJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createContacts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n[\r\n  {\r\n    \r\n    \"AssistantName\":\"AssistantName\",\r\n    \"AssistantPhone\":\"AssistantPhone\",\r\n    \"Birthdate\":\"1/2/2003\",\r\n    \"CleanStatus\":\"Matched\",\r\n    \"Department\":\"Department\",\r\n    \"Description\":\"Description\",\r\n    \"DoNotCall\":true\t,\r\n    \"Email\":\"Email\",\r\n    \"Fax\":45,\r\n    \"FirstName\":\"FirstName\",\r\n    \"LastName\": \"LastName\",\r\n    \"GenderIdentity\":\"MALE\",\r\n    \"HasOptedOutOfEmail\":true\r\n\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateContact",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"Id\":\"0032w000012L8czAAC\",\r\n    \"AssistantName\":\"AssistantName\",\r\n    \"AssistantPhone\":\"AssistantPhone\",\r\n    \"Birthdate\":\"1/2/2003\",\r\n    \"CleanStatus\":\"Matched\",\r\n    \"Department\":\"Department\",\r\n    \"Description\":\"Description\",\r\n    \"DoNotCall\":true\t,\r\n    \"Email\":\"Email\",\r\n    \"Fax\":45,\r\n    \"FirstName\":\"FirstName\",\r\n    \"LastName\": \"LastName\",\r\n    \"GenderIdentity\":\"MALE\",\r\n    \"HasOptedOutOfEmail\":true\r\n\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteContact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/contacts?Id=0032w000012L8czAAC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "Id",
+							"value": "0032w000012L8czAAC"
 						}
 					]
 				}

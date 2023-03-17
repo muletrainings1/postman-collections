@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "91b93be2-2837-4837-b14a-ffca9632ae3a",
+		"_postman_id": "d64401ba-614b-49ef-9e83-3753d297e45a",
 		"name": "sf-sys-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "createContacts",
+			"name": "createAccount",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n[\r\n  {\r\n    \r\n    \"AssistantName\":\"AssistantName\",\r\n    \"AssistantPhone\":\"AssistantPhone\",\r\n    \"Birthdate\":\"1/2/2003\",\r\n    \"CleanStatus\":\"Matched\",\r\n    \"Department\":\"Department\",\r\n    \"Description\":\"Description\",\r\n    \"DoNotCall\":true\t,\r\n    \"Email\":\"Email\",\r\n    \"Fax\":45,\r\n    \"FirstName\":\"FirstName\",\r\n    \"LastName\": \"LastName\",\r\n    \"GenderIdentity\":\"MALE\",\r\n    \"HasOptedOutOfEmail\":true\r\n\r\n  }\r\n]",
+					"raw": "[{\r\n\t  \r\n\t  \"Name\": \"gpk associates\",\r\n    \"AccountNumber\": \" 0898098sbi\",\r\n\t  \"AccountSource\": \"Advertisement\",\r\n\t  \"AnnualRevenue\": \"66869987\",\r\n\t  \"BillingCity\": \" hyderabad\",\r\n\t  \"BillingCountry\": \"India\",\r\n\t  \"BillingLatitude\": 12,\r\n\t  \"BillingLongitude\": 14,\r\n\t  \"BillingPostalCode\": \"500096\",\r\n\t  \"BillingState\": \"Telangana\",\r\n\t  \"BillingStreet\":\"sapthagiricolony\",\r\n\t  \"CleanStatus\":\"Different\",\r\n\t  \"Description\":\"dont know\",\r\n\t  \"DunsNumber\":\"buns123\"\r\n\t  \r\n\t}]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/contacts",
+					"raw": "http://localhost:8081/api/accounts",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -28,20 +28,46 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"contacts"
+						"accounts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "updateContact",
+			"name": "deleteAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/accounts?Id=0012w00001Pl14uAAB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "Id",
+							"value": "0012w00001Pl14uAAB"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAccount",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n  {\r\n    \"Id\":\"0032w000012L8czAAC\",\r\n    \"AssistantName\":\"AssistantName\",\r\n    \"AssistantPhone\":\"AssistantPhone\",\r\n    \"Birthdate\":\"1/2/2003\",\r\n    \"CleanStatus\":\"Matched\",\r\n    \"Department\":\"Department\",\r\n    \"Description\":\"Description\",\r\n    \"DoNotCall\":true\t,\r\n    \"Email\":\"Email\",\r\n    \"Fax\":45,\r\n    \"FirstName\":\"FirstName\",\r\n    \"LastName\": \"LastName\",\r\n    \"GenderIdentity\":\"MALE\",\r\n    \"HasOptedOutOfEmail\":true\r\n\r\n  }\r\n]",
+					"raw": "[{\r\n  \"Id\": \"0012w00001Pl14uAAB\",\r\n  \"AccountNumber\": \"0998098sbi\",\r\n  \"Name\": \"hds associates\",\r\n  \"AccountSource\": \"Advertisement\",\r\n  \"AnnualRevenue\": \"66869987\",\r\n  \"BillingCity\": \" hyderabad\",\r\n  \"BillingCountry\": \"India\",\r\n  \"BillingLatitude\": 12,\r\n  \"BillingLongitude\": 14,\r\n  \"BillingPostalCode\": \"500096\",\r\n  \"BillingState\": \"Telangana\",\r\n  \"BillingStreet\":\"sapthagiricolony neredmet\",\r\n  \"CleanStatus\":\"Different\",\r\n  \"Description\":\"dont know\",\r\n  \"DunsNumber\":\"buns123\"\r\n  \r\n}]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,7 +75,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/contacts",
+					"raw": "http://localhost:8081/api/accounts",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -57,19 +83,28 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"contacts"
+						"accounts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "deleteContact",
+			"name": "createOpp",
 			"request": {
-				"method": "DELETE",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\r\n{\r\n\"Name\": \"oppTest\",\r\n\"StageName\": \"test\",\r\n\"CloseDate\" : \"2023-03-13\",\r\n\"AccountId\": \"0012w00001NnjF7AAJ\",\r\n\"Amount\" : \"911\",\r\n\"Description\" : \"Greatest description you have ever seen\",\r\n\"ForecastCategoryName\": \"Commit\"\r\n\r\n}\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8081/api/contacts?Id=0032w000012L8czAAC",
+					"raw": "http://localhost:8081/api/Opportunity",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -77,12 +112,61 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"contacts"
+						"Opportunity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOpp",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"Id\" : \"0062w00000KehYjAAJ\",\r\n    \"Name\": \"erty\",\r\n    \"StageName\": \"fgdjhf\",\r\n    \"AccountId\": \"IMF911\",\r\n    \"Amount\" : \"912\",\r\n    \"Description\" : \"Greatest description\",\r\n    \"ForecastCategoryName\": \"Commit\"\r\n   \r\n\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/Opportunity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"Opportunity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOpp",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/Opportunity?Id=0062w00000KehYjAAJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"Opportunity"
 					],
 					"query": [
 						{
 							"key": "Id",
-							"value": "0032w000012L8czAAC"
+							"value": "0062w00000KehYjAAJ"
 						}
 					]
 				}
